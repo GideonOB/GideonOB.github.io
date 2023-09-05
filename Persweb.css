@@ -9,7 +9,7 @@ html {
     background-image: linear-gradient(to right, maroon, #317e89, maroon);
 }
 
-
+/* Default styles for the navbar */
 header {
     background-color: #317e89;
     color: #fff;
@@ -35,26 +35,19 @@ header {
 }
 
 .navbar__logo {
-    /*text-transform: uppercase;*/
     border-bottom: 2px solid silver;
     width: 23%;
     margin-bottom: 0px;
-    margin-left: calc(10%/6);
-
+    margin-left: calc(10% / 6);
 }
 
 .navbar__logo a {
-    /* Apply the same styles you have for the logo text */
     font-family: 'Roboto', 'Raleway', Arial, Helvetica, sans-serif;
     font-size: 2em;
     font-weight: bold;
     color: rgb(0, 0, 0);
     text-decoration: none;
-    /* Remove default underline */
-    /* Add any other styles specific to the link if needed */
 }
-
-
 
 .navbar__links {
     display: flex;
@@ -85,6 +78,30 @@ header {
     transition: background-color 2s;
     transform: translateY(-4px);
     font-weight: bold;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .navbar__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__logo {
+        width: 100%;
+        /* Full width for smaller screens */
+        margin-left: 0;
+    }
+
+    .navbar__links {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .navbar__links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }
 
 #division {
