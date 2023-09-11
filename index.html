@@ -27,11 +27,16 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a target="blank"
-                            href="https://drive.google.com/file/d/1c2agyWZg7FZOpGFDxGI7Uvx4NObvdolA/view?usp=sharing">Resume</a>
+                            href="https://drive.google.com/file/d/10FGN1PtJznhFr3NXFr5SaYORxk92awaO/view?usp=sharing">Resume</a>
                     </li>
                     <li><a href="#timeline">Timeline</a></li>
                     <li><a href="#contact-form">Contact</a></li>
                 </ul>
+            </div>
+            <div class="navbar__toggle-btn" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
         </nav>
     </header>
@@ -160,6 +165,12 @@
 
             <div class="container left">
                 <div class="content">
+                    <h2>September 2023</h2>
+                    <p>Started working as a Commercial Real Estate Intern at Project Destined</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
                     <h2>August 2023</h2>
                     <p>Started working as a Data Science Intern at Data Glacier</p>
                 </div>
@@ -169,6 +180,18 @@
                     <h2>August 2023</h2>
                     <img src="images/google data.png" alt="Data Analytics Certification" class="timeline-img">
                     <p>Completed the Google Data Analytics Professional Certification program</p>
+                </div>
+            </div>
+            <div class="container left">
+                <div class="content">
+                    <h2> April 2023</h2>
+                    <p>Took part in the Thurgood Marshall College Fund's five-day event, "The Pitch" competition.</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <h2> April 2023</h2>
+                    <p>Awarded "Best Senior-Year Computer Science Student" at Elizabeth City State University</p>
                 </div>
             </div>
             <div class="container left">
@@ -267,7 +290,12 @@
             &copy; 2023 Gideon Osei Bonsu. All rights reserved. Last Updated: September 2, 2023.
         </p>
     </footer>
-
+    <script>
+        function toggleMenu() {
+            var links = document.querySelector('.navbar__links');
+            links.classList.toggle('active');
+        }
+    </script>
 
     <script>
         let slideIndex = 1;
