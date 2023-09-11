@@ -98,6 +98,17 @@ header {
     transition: 0.4s;
 }
 
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    z-index: 202;
+}
+
 @media screen and (max-width: 768px) {
     .navbar__links {
         display: none;
@@ -111,6 +122,17 @@ header {
         padding: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+    }
+
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        z-index: 202;
     }
 
     .navbar__links.active {
