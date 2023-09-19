@@ -238,14 +238,17 @@ div #design {
 #about p {
 
     text-align: center;
-    font-weight: bold;
-    margin: 0px 00px 0px 90px;
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1.6;
     margin-bottom: 24px;
     color: rgb(255, 255, 255);
 }
 
+.mt-3 {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 23px;
+}
 
 #about @media (min-width: 992px) {
     #about .col-md-6:first-of-type {
