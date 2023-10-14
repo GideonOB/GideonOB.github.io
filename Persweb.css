@@ -365,7 +365,7 @@ div.head-container p {
 .project-frame {
     border: 1px solid #ccc;
     padding: 20px;
-    text-alig1n: center;
+    text-align: center;
     margin: 20px;
 
     width: 40%;
@@ -494,6 +494,7 @@ div.head-container p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
+
 
 
 .timeline {
