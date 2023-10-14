@@ -244,6 +244,47 @@ div #design {
     color: rgb(255, 255, 255);
 }
 
+.intro {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #d1921e;
+    text-align: center;
+}
+
+.values-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.value-box {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+}
+
+.value-box:hover {
+    transform: scale(1.05);
+}
+
+.value-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #d9534f;
+}
+
+.value-description {
+    font-size: 1em;
+}
+
 .mt-3 {
     margin-left: 15%;
     margin-right: 15%;
@@ -324,7 +365,7 @@ div.head-container p {
 .project-frame {
     border: 1px solid #ccc;
     padding: 20px;
-    text-align: center;
+    text-alig1n: center;
     margin: 20px;
 
     width: 40%;
@@ -453,7 +494,6 @@ div.head-container p {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
 }
-
 
 
 .timeline {
