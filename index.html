@@ -2,431 +2,950 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gideon Osei Bonsu</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="Persweb.css">
+    <!-- Fonts (keep if you like them) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,400&family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="Persweb.css" />
 </head>
 
 <body>
 
-    <header>
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header">
         <nav class="navbar">
             <div class="navbar__container">
-                <nav class="navbar__logo">
-                    <a href="#">Gideon/OseiBonsu</a>
-                </nav>
+                <div class="navbar__logo">
+                    <a href="#home">Gideon/OseiBonsu</a>
+                </div>
+
+                <button class="navbar__toggle-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
                 <ul class="navbar__links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a target="blank"
-                            href="https://drive.google.com/file/d/1sCrsbT4sXPF7X364ooEgctGkESKalBCa/view?usp=sharing">Resume</a>
+                    <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#portfolio" onclick="toggleMenu()">Portfolio</a></li>
+                    <li>
+                        <a target="_blank"
+                           href="https://drive.google.com/file/d/1sCrsbT4sXPF7X364ooEgctGkESKalBCa/view?usp=sharing">
+                           Resume
+                        </a>
                     </li>
-                    <li><a href="#timeline">Timeline</a></li>
-                    <li><a href="#contact-form">Contact</a></li>
+                    <li><a href="#timeline" onclick="toggleMenu()">Timeline</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                     <li class="close-btn" onclick="toggleMenu()">&#10006;</li>
                 </ul>
-            </div>
-            <div class="navbar__toggle-btn" onclick="toggleMenu()">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
             </div>
         </nav>
     </header>
 
     <main>
-        <center>
-            <div id="division"></div>
-            <div class="welcome">
-                <br><br>
-                <h1 style="color:white">Hello and welcome! </h1>
-                <h2 style="color:white">I'm delighted that you've taken the time to explore my personal website. Thank
-                    you!</h2>
-                </h1>
-                <br><br>
-                <p id="firstp" style="color:white">My academic journey includes achieving Summa Cum Laude honors for
-                    both my Associate <br><br>of
-                    Science degree in Liberal Arts and Science from Manchester Community College, CT,<br><br> and my
-                    bachelor's
-                    degree in computer science with a concentration in data science and a<br><br> minor in mathematics
-                    from
-                    Elizabeth City State University. Additionally, I hold a <br><br>professional data analytics
-                    certificate
-                    earned through the Google Data Analytics<br><br> Professional Certificate program.
-                </p>
-                <br><br>
-                <br>
-                <div id="design">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+
+        <section id="home" class="section hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1>Hello and welcome!</h1>
+                    <h2>I'm delighted that you've taken the time to explore my personal website. Thank you!</h2>
+
+                    <!-- Same words, just without heavy manual line breaks -->
+                    <p id="firstp">
+                         My academic journey includes achieving Summa Cum Laude honors for
+                        both my Associate of Science degree in Liberal Arts and Science from Manchester Community College, CT,
+                        and my bachelor's degree in computer science with a concentration in data science and a
+                        minor in mathematics from Elizabeth City State University. Additionally, I hold a
+                        professional data analytics certificate earned through the Google Data Analytics
+                        Professional Certificate program.
+                    </p>
+
+                    <!-- NEW: CTA buttons -->
+                    <div class="hero__actions">
+                        <a class="btn btn--primary"
+                            target="_blank"
+                            href="https://drive.google.com/file/d/1sCrsbT4sXPF7X364ooEgctGkESKalBCa/view?usp=sharing">
+                            Resume
+                        </a>
+                        <a class="btn btn--ghost" href="#portfolio">
+                            Projects
+                        </a>
+                    </div>
+
+                    <div id="design" aria-hidden="true">
+                        <div></div><div></div><div></div><div></div><div></div>
+                    </div>
                 </div>
             </div>
-        </center>
-        <section id="about">
-            <div class="abtcontainer">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="head-container">
-                            <h3 class="section-title mb-2">About Me</h3>
-                        </div>
+        </section>
 
+
+        <!-- ABOUT -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-head">
+                    <h3>About Me</h3>
+                </div>
+
+                <div class="about__grid">
+                    <div class="about__image-wrap">
+                        <img src="images/Gideon.jpg" alt="Gideon Osei Bonsu" />
                     </div>
-                    <br>
-                    <br>
-                    <div class="col-md-8">
-                        <div class="about-image">
-                            <img src="images/Gideon.jpg" alt="Your Name" class="img-fluid rounded-circle mb-3">
-                        </div>
-                        <p class="mt-3" style="color:white">
+
+                    <div class="about__content">
+                        <p class="mt-3">
                             <br>
                             Greetings once more! I'm Gideon Osei Bonsu, a motivated individual with a profound penchant
-                            for data analysis. My zeal revolves around converting intricate data into purposeful
-                            revelations.
-                            Possessing a Data Analytics certification, I've refined my ability to extract valuable
-                            insights from diverse datasets. My expertise extends to utilizing languages such as R,
-                            Python, SQL, and PHP, along with proficiency in tools like Tableau, Microsoft Excel, and Big
-                            Query, among others. With aspirations in data science, data/business analysis, and product
-                            management, I aim to leverage my analytical acumen to drive impactful decision-making.
-                            Alongside this, I possess a deep fascination for Graphic Design and
-                            Video Editing.
+                            for data analysis...
                         </p>
+
                         <div class="intro">
                             These are the guiding principles that shape my character:
                         </div>
+
                         <div class="values-container">
                             <div class="value-box">
                                 <h2 class="value-title">Humility</h2>
-                                <p class="value-description" style="color: black;">I face every challenge with an open
-                                    mind, and have a humble approach to interacting with people</p>
+                                <p class="value-description">
+                                    I face every challenge with an open mind, and have a humble approach to interacting with people
+                                </p>
                             </div>
                             <div class="value-box">
                                 <h2 class="value-title">Intellectual Curiosity</h2>
-                                <p class="value-description" style="color: black;">I have embraced the joy of
-                                    lifelong
-                                    learning and seeking to
-                                    understand the depths of the world</p>
+                                <p class="value-description">
+                                    I have embraced the joy of lifelong learning and seeking to understand the depths of the world
+                                </p>
                             </div>
                             <div class="value-box">
                                 <h2 class="value-title">Diligence</h2>
-                                <p class="value-description" style="color: black;">Persistently putting in the effort
-                                    and time required to
-                                    achieve excellence in every endeavor</p>
+                                <p class="value-description">
+                                    Persistently putting in the effort and time required to achieve excellence in every endeavor
+                                </p>
                             </div>
                         </div>
-                        <P class="mt-3" style="font-weight: bold;">
+
+                        <p class="mt-3 bold-line">
                             Let's connect and explore the possibilities of data-driven innovation together!
-                        </P>
-                        <br><br>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- PORTFOLIO -->
+<section id="portfolio" class="section portfolio">
+    <div class="container">
+        <div class="section-head">
+            <h3>Data Analysis / Data Mining Projects</h3>
+        </div>
 
-        <center>
-            <section id="port">
-                <section class="portfolio-container">
-                    <div class="head-container">
-                        <h3>Data Analysis / Data Mining Projects</h3>
+        <div class="portfolio-container">
+
+            <!-- SLIDESHOW -->
+            <div id="frames" class="slides-wrap">
+
+                <figure class="mySlides fade">
+                    <div class="project-frame">
+                        <a href="https://github.com/GideonOB/Data-Glacier-Data-Science-Internship_Fall-2023/blob/GidBranch/Week_2_CabDataAnalysis/XYZ_G2M_%20Presentation.pdf"
+                           target="_blank">
+                            <img src="images/g2m.png" alt="Market Analysis with Python" class="slide_img">
+                        </a>
+                        <h3>Market Analysis with Python</h3>
+                        <p>Go-To Market Insights for Cab Investment Firm</p>
                     </div>
-                    <p id="portfolio"></p>
-                    <div id="frames">
-                        <figure class="mySlides fade">
-                            <div class="project-frame">
-                                <a href="https://github.com/GideonOB/Data-Glacier-Data-Science-Internship_Fall-2023/blob/GidBranch/Week_2_CabDataAnalysis/XYZ_G2M_%20Presentation.pdf"
-                                    target="_blank">
-                                    <img src="images/g2m.png" alt="Project 1 Screenshot" class="slide_img">
-                                </a>
+                </figure>
 
-                                <h3>Market Analysis with Python</h3>
-                                <p>Go-To Market Insights for Cab Investment Firm</p>
-                            </div>
-                        </figure>
+                <figure class="mySlides fade">
+                    <div class="project-frame">
+                        <a href="https://github.com/GideonOB/Bellabeat-Case-Study-Google-Data-Analytics/blob/main/README.md"
+                           target="_blank">
+                            <img src="images/bellabeat.png" alt="Data Analysis with R" class="slide_img">
+                        </a>
+                        <h3>Data Analysis with R</h3>
+                        <p>Bellabeat Fitness Data Analysis for Company Growth Decision-Making</p>
+                    </div>
+                </figure>
 
+                <figure class="mySlides fade">
+                    <div class="project-frame">
+                        <a href="https://github.com/GideonOB/Data_Mining_Clustering_Project/blob/main/Data%20Mining%20Clustering%20Project.ipynb"
+                           target="_blank">
+                            <img src="images/data_mining.png" alt="Color-Based Image Segmentation" class="slide_img">
+                        </a>
+                        <h3>Color-Based Image Segmentation Using Unsupervised RGB Clustering</h3>
+                        <p>Initiative to cluster similar groups of image pixels, assigning distinct colors to each cluster.</p>
+                    </div>
+                </figure>
 
-                        <figure class="mySlides fade">
-                            <div class="project-frame">
-                                <a href="https://github.com/GideonOB/Bellabeat-Case-Study-Google-Data-Analytics/blob/main/README.md"
-                                    target="_blank">
-                                    <img src="images/bellabeat.png" alt="Project 2 Screenshot" class="slide_img">
-                                </a>
+                <button class="prev" onclick="plusSlides(-1)" aria-label="Previous project">❮</button>
+                <button class="next" onclick="plusSlides(1)" aria-label="Next project">❯</button>
 
-                                <h3>Data Analysis with R</h3>
-                                <p>Bellabeat Fitness Data Analysis for Company Growth Decision-Making</p>
-                            </div>
-                        </figure>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
 
-                        <figure class="mySlides fade">
-                            <div class="project-frame">
-                                <a href="https://github.com/GideonOB/Data_Mining_Clustering_Project/blob/main/Data%20Mining%20Clustering%20Project.ipynb
-                        " target="_blank">
-                                    <img src="images/data_mining.png" alt="Project 3 Screenshot" class="slide_img">
-                                </a>
-                                <h3>Clustering Image Pixels Project</h3>
-                                <p>Initiative to cluster similar groups of image pixels, assigning distinct colors to
-                                    each
-                                    cluster.</p>
-                            </div>
+            <!-- QUICK SCAN GRID -->
+            <div class="portfolio-divider"></div>
 
-                        </figure>
-                        <a class="prev" onclick="plusSlides(-1)">❮</a>
-                        <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="portfolio-quick">
+                <h4 class="portfolio-quick__title">Quick View</h4>
 
+                <div class="portfolio-grid">
 
-                        <div style="text-align:center">
-                            <span class="dot" onclick="currentSlide(1)"></span>
-                            <span class="dot" onclick="currentSlide(2)"></span>
-                            <span class="dot" onclick="currentSlide(3)"></span>
+                    <a class="portfolio-card"
+                       href="https://github.com/GideonOB/Data-Glacier-Data-Science-Internship_Fall-2023/blob/GidBranch/Week_2_CabDataAnalysis/XYZ_G2M_%20Presentation.pdf"
+                       target="_blank">
+                        <div class="portfolio-card__img">
+                            <img src="images/g2m.png" alt="Market Analysis with Python">
                         </div>
+                        <div class="portfolio-card__body">
+                            <h5>Market Analysis with Python</h5>
+                            <p>Go-To Market insights for cab investment decisions.</p>
+                            <span class="portfolio-chip">Python</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card"
+                       href="https://github.com/GideonOB/Bellabeat-Case-Study-Google-Data-Analytics/blob/main/README.md"
+                       target="_blank">
+                        <div class="portfolio-card__img">
+                            <img src="images/bellabeat.png" alt="Data Analysis with R">
+                        </div>
+                        <div class="portfolio-card__body">
+                            <h5>Data Analysis with R</h5>
+                            <p>Trends + recommendations for fitness product growth.</p>
+                            <span class="portfolio-chip">R</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card"
+                       href="https://github.com/GideonOB/Data_Mining_Clustering_Project/blob/main/Data%20Mining%20Clustering%20Project.ipynb"
+                       target="_blank">
+                        <div class="portfolio-card__img">
+                            <img src="images/data_mining.png" alt="RGB Clustering">
+                        </div>
+                        <div class="portfolio-card__body">
+                            <h5>Unsupervised RGB Clustering</h5>
+                            <p>Color-based segmentation and image reconstruction.</p>
+                            <span class="portfolio-chip">Clustering</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!-- TIMELINE (4 TABS + YEAR GROUPS) -->
+<section id="timeline" class="section timeline-section">
+    <div class="container">
+        <div class="section-head">
+            <h3>Timeline</h3>
+        </div>
+
+        <!-- Tabs -->
+        <div class="timeline-tabs" role="tablist" aria-label="Timeline categories">
+            <button class="timeline-tab is-active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-controls="panel-academic"
+                    id="tab-academic"
+                    onclick="switchTimelineTab('academic')">
+                Academic
+            </button>
+
+            <button class="timeline-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-professional"
+                    id="tab-professional"
+                    onclick="switchTimelineTab('professional')">
+                Professional
+            </button>
+
+            <button class="timeline-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-entrepreneurial"
+                    id="tab-entrepreneurial"
+                    onclick="switchTimelineTab('entrepreneurial')">
+                Entrepreneurial
+            </button>
+
+            <button class="timeline-tab"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="panel-awards"
+                    id="tab-awards"
+                    onclick="switchTimelineTab('awards')">
+                Awards & Community
+            </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="timeline-panels">
+
+            <!-- =======================
+                 ACADEMIC
+            ======================== -->
+            <div class="timeline-panel is-active"
+                 role="tabpanel"
+                 id="panel-academic"
+                 aria-labelledby="tab-academic">
+
+                <!-- 2025 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2025</h4>
                     </div>
-                </section>
-            </section>
-        </center>
 
-        <section class="timeline">
-            <div class="head-container">
-                <h3>Timeline</h3>
-            </div>
-            <p id="timeline"></p>
-            <div class="container right">
-                <div class="content">
-                    <h2>April 2024</h2>
-                    <p>Started working as a data analyst for Therapeutic Innovations Inc.</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>April 2024</h2>
-                    <p>Started working as a Data Science Intern at Changing The Present</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>December 2023</h2>
-                    <p>Graduated with Summa Cum Laude honors from Elizabeth City State University, earning a bachelor's
-                        degree in computer science with a concentration in data science and a minor in mathematics.</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>November 2023</h2>
-                    <p>Earned Viewers' Choice Award in the 65-hour-long "High Performance Computing (HPC) in the
-                        City: Pandemics" Hackathon with my team "RenderMages". This hackathon was jointly hosted by
-                        Texas Advanced
-                        Computing Center, HackHPC and Science Gateways Community Institute .</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>September - November 2023</h2>
-                    <p>Worked as a Commercial Real Estate Analyst Intern at Project Destined</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>July - October 2023</h2>
-                    <p>Data Science Intern at Data Glacier</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>August 2023</h2>
-                    <img src="images/google data.png" alt="Data Analytics Certification" class="timeline-img">
-                    <p>Completed the Google Data Analytics Professional Certification program</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2> April 2023</h2>
-                    <p>Took part in the Thurgood Marshall College Fund's five-day event, "The Pitch" competition in
-                        Winston Salem, NC.</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2> April 2023</h2>
-                    <p>Awarded "Best Senior-Year Computer Science Student" at Elizabeth City State University</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>Feb - April 2023</h2>
-                    <p>Worked as a Strategic Business Development Extern with The Home Depot</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>November 2022</h2>
-                    <p>Started working as a peer tutor for Calculus I and II, Python Programming, Number Theory, Java
-                        Programming, C++
-                        Programming and other math and computer science courses with ECSU's Tutorial Services Center</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>July to August 2022</h2>
-                    <p>Worked as a digital marketing intern through the Meta Career Connections Fellowship.
-                        <br>Transferred to Elizabeth City State University after my year-long
-                        study at University of Maine, Presque Isle.
-                    </p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>August 2021</h2>
-                    <p>After earning my Associate of Science degree in Liberal Arts and Science with a 3.96 GPA, I
-                        proceeded to enroll at the University of Maine, Presque Isle, for BSc. Computer Science.</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>May 2021</h2>
-                    <p>Emerged as the winner of the Annual Writing Contest at Manchester Community College, in the
-                        non-fiction category</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>April 2021</h2>
-                    <img src="images/all-ct.jpg" alt="all-ct" class="timeline-img">
-                    <p>Selected for induction into the state of Connecticut's prestigious Phi Theta Kappa 2021 All-Academic Team, which
-                        honors the 30 most outstanding students across the state's 12 community colleges annually</p>
-                </div>
-            </div>
-            <div class="container left">
-                <div class="content">
-                    <h2>January 2020</h2>
-                    <p>Transferred to Manchester Community College, CT</p>
-                </div>
-            </div>
-            <div class="container right">
-                <div class="content">
-                    <h2>September 2019</h2>
-                    <p>Enrolled in Stevenson University and started work as a Student Assistant with the Stevenson
-                        University Conference
-                        Services Department</p>
-                </div>
-            </div>
-            </div>
-        </section>
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>August 2025</h5>
+                                <p>
+                                    Transferred to Grand Valley State University, enrolled in the Master's in Data Science and Analytics program.
+                                </p>
+                            </div>
+                        </article>
 
-        <section class="contact">
-            <div class="contact-container">
-                <h2>Contact Me</h2>
-                <p>Feel free to get in touch with me using the form below:</p>
-                <form id="contact-form" method="POST" action="https://formspree.io/f/maygjovd">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>January 2025</h5>
+                                <p>
+                                    Enrolled in the Master's in Applied Mathematics program at Grand Valley State University.
+                                </p>
+                            </div>
+                        </article>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>January - May 2025</h5>
+                                <p>
+                                    Worked as a Graduate Research and Teaching Assistant the Department of Mathematics, Computer Science and Engineering
+                                    Technology at Elizabeth City State University
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2023</h4>
+                    </div>
 
-                    <button type="submit">Send</button>
-                    <p id="my-form-status"></p>
-                </form>
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>December 2023</h5>
+                                <p>
+                                    Graduated with Summa Cum Laude honors from Elizabeth City State University, earning a BSc. Computer Science degree
+                                    with a concentration in Data Science and a minor in Mathematics.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>August 2023</h5>
+                                <div class="timeline-media">
+                                    <img src="images/google data.png" alt="Data Analytics Certification">
+                                </div>
+                                <p>
+                                    Completed the Google Data Analytics Professional Certification program
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2020 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2020</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>January 2020</h5>
+                                <p>Transferred to Manchester Community College, CT</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2019</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>September 2019</h5>
+                                <p>Enrolled in Stevenson University</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
-        </section>
+
+
+            <!-- =======================
+                 PROFESSIONAL
+            ======================== -->
+            <div class="timeline-panel"
+                 role="tabpanel"
+                 id="panel-professional"
+                 aria-labelledby="tab-professional">
+
+                <!-- 2025 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2025</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>August 2025</h5>
+                                <p>
+                                    Started working as the Strategic Planning, Assessment and Accreditation Graduate Assistant in the Office of the Provost.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>January 2025</h5>
+                                <p>Stopped working as a data analyst</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2024</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>April 2024</h5>
+                                <p>
+                                    Started working as a data analyst for Therapeutic Innovations Inc.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>April 2024</h5>
+                                <p>
+                                    Started volunteering as a Data Science Intern at the non-profit company - Changing The Present
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2023</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>September - November 2023</h5>
+                                <p>
+                                    Worked as a Commercial Real Estate Analyst Intern at Project Destined
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>November 2022 - December 2023</h5>
+                                <p>
+                                    Peer tutor for Calculus I and II, Python Programming, Number Theory, Java Programming, C++ Programming and other
+                                    mathematics and computer science courses with Elizabeth City State University's Office of Student Success and Retention
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2021</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>August 2021 to August 2022</h5>
+                                <p>
+                                    Worked as a digital marketing intern through the Meta Career Connections Fellowship.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>September 2019</h5>
+                                <p>
+                                    Started work as a Student Assistant with the Stevenson University Conference Services Department
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- =======================
+                 ENTREPRENEURIAL
+            ======================== -->
+            <div class="timeline-panel"
+                 role="tabpanel"
+                 id="panel-entrepreneurial"
+                 aria-labelledby="tab-entrepreneurial">
+
+                <!-- 2025 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2025</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>December 2025</h5>
+                                <p>
+                                    Received Semi-finalist honors during the Grand Rapids DeepTech 2025 Pitch after deploying MVP for my business - Sender+ -
+                                    built on React/FastAPI full-stack architecture.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>August 2025</h5>
+                                <p>
+                                    Started working on a business named "Sender+", in collaboration with my sister Nancy, aimed at building a tech-enabled
+                                    campus package delivery solution that addresses the logistics challenges Ghanaian university students face.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2023</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>May 2023</h5>
+                                <p>
+                                    Participated in Thurgood Marshall College Fund's intensive five-day entrepreneurial development and pitch competition
+                                    program, dubbed "The Pitch 2023" in Winston Salem, NC.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- =======================
+                 AWARDS & COMMUNITY
+            ======================== -->
+            <div class="timeline-panel"
+                 role="tabpanel"
+                 id="panel-awards"
+                 aria-labelledby="tab-awards">
+
+                <!-- 2025 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2025</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>September - November 2025</h5>
+                                <p>
+                                    Volunteer Cultural Mentor during the Blandford School International Night Project in Allendale, MI.
+                                    Mentored a local 6th-grade student on his project on Ghana, guiding research and supporting poster and food presentation.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2023</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>November 2023</h5>
+                                <p>
+                                    Earned Viewers' Choice Award in the 65-hour-long "High Performance Computing (HPC) in the City: Pandemics" Hackathon
+                                    with my team "RenderMages". This hackathon was jointly hosted by Texas Advanced Computing Center, HackHPC and Science
+                                    Gateways Community Institute.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>April 2023</h5>
+                                <p>
+                                    Awarded "Most Impressive Senior-Year Computer Science Student" award at Elizabeth City State University
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="timeline-year">
+                    <div class="timeline-year__header">
+                        <h4>2021</h4>
+                    </div>
+
+                    <div class="timeline-list">
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>May 2021</h5>
+                                <p>
+                                    Emerged as the winner of the Annual Writing Contest at Manchester Community College,
+                                    in the non-fiction category
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="timeline-card">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card__content">
+                                <h5>April 2021</h5>
+                                <div class="timeline-media">
+                                    <img src="images/all-ct.jpg" alt="all-ct">
+                                </div>
+                                <p>
+                                    Selected for inclusion in Connecticut's prestigious Phi Theta Kappa 2021 All-Academic Team, which honors the 30 most
+                                    outstanding students from the state's 12 community colleges annually
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+        <!-- CONTACT -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+
+            <p class="contact-lead">
+                I’m currently seeking a <strong>Summer 2026 internship</strong> in <strong>Data Analytics</strong>, <strong>Data Science</strong>,
+                <strong>Product Management</strong>, or <strong>Systems Analysis</strong>.
+                I’m also open to collaborations on <strong>SenderPlus</strong>.
+            </p>
+
+            <form id="contact-form" method="POST" action="https://formspree.io/f/maygjovd">
+                <label for="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    maxlength="80"
+                    placeholder="Your name"
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    maxlength="120"
+                    placeholder="you@email.com"
+                >
+
+                <label for="reason">Reason for reaching out</label>
+                <select id="reason" name="reason">
+                    <option value="Summer Internship">Summer Internship</option>
+                    <option value="Data Analytics">Data Analytics Opportunity</option>
+                    <option value="Data Science">Data Science Opportunity</option>
+                    <option value="Product Management">Product Management Opportunity</option>
+                    <option value="Systems Analyst">Systems Analyst Opportunity</option>
+                    <option value="SenderPlus Collaboration">SenderPlus Collaboration</option>
+                    <option value="Research/Academic">Research/Academic</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    maxlength="1200"
+                    placeholder="A brief note is perfect. Feel free to include role, team, and timeline."
+                ></textarea>
+
+                <!-- Honeypot (spam protection) -->
+                <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off">
+
+                <button type="submit">Send Message</button>
+
+                <p id="my-form-status" aria-live="polite" role="status"></p>
+
+                <center><p class="contact-privacy">
+                    Your message comes directly to me.
+                </p></center>
+            </form>
+
+            <div class="contact-alt">
+                <a class="btn btn--ghost" target="_blank"
+                   href="https://www.linkedin.com/in/gideon-osei-bonsu-197a1916a/">
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     </main>
 
     <footer class="footer">
-        <div class="footer-links">
-            <a href="https://www.linkedin.com/in/gideon-osei-bonsu-197a1916a/" target="Blank"><img
-                    src="images/LinkedIn.png" alt="LinkedIn" class="emoji"></a>
-            <a href="https://github.com/GideonOB" target="Blank"><img src="images/github.png" alt="Github"
-                    class="emoji"></a>
-            <a href="https://www.instagram.com/gideon_ob/" target="Blank"><img src="images/instagram.png"
-                    alt="Instagram" class="emoji"></a>
-        </div>
-        <p class="footer-copyright">
-            &copy; 2023 Gideon Osei Bonsu. All rights reserved. Last Updated: April 20, 2024.
-        </p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            var links = document.querySelector('.navbar__links');
-            links.classList.toggle('active');
+    <p class="footer-focus">
+        Seeking <strong>Summer 2026 internships</strong> in <strong>Data Analytics</strong>, <strong>Data Science</strong>,
+        <strong>Product Management</strong>, or <strong>Systems Analysis</strong>.
+        <span class="footer-focus__sub">Open to SenderPlus collaborations.</span>
+    </p>
+
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/gideon-osei-bonsu-197a1916a/" target="_blank" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="emoji">
+        </a>
+        <a href="https://github.com/GideonOB" target="_blank" aria-label="GitHub">
+            <img src="images/github.png" alt="Github" class="emoji">
+        </a>
+        <a href="https://www.instagram.com/gideon_ob/" target="_blank" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram" class="emoji">
+        </a>
+    </div>
+
+    <div class="footer-cta">
+        <a class="footer-resume"
+           target="_blank"
+           href="https://drive.google.com/file/d/1sCrsbT4sXPF7X364ooEgctGkESKalBCa/view?usp=sharing">
+            View Resume
+        </a>
+    </div>
+
+    <p class="footer-copyright">
+        &copy; 2025 Gideon Osei Bonsu. All rights reserved. Last Updated: December 8, 2025.
+    </p>
+</footer>
+
+   
+<!-- =====================
+     ALL SCRIPTS (BOTTOM)
+===================== -->
+
+<script>
+    /* ---------------------
+       MOBILE NAV TOGGLE
+    --------------------- */
+    function toggleMenu() {
+        const links = document.querySelector('.navbar__links');
+        if (!links) return;
+        links.classList.toggle('active');
+    }
+
+
+    /* ---------------------
+       PORTFOLIO SLIDESHOW
+    --------------------- */
+    let slideIndex = 1;
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+
+        if (!slides || slides.length === 0) return;
+
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-    </script>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.display = "block";
+        if (dots[slideIndex - 1]) {
             dots[slideIndex - 1].className += " active";
         }
-    </script>
+    }
 
 
-    <script>
-        var form = document.getElementById("contact-form");
+    /* ---------------------
+       TIMELINE TABS
+    --------------------- */
+    function switchTimelineTab(key) {
+        const keys = ['academic', 'professional', 'entrepreneurial', 'awards'];
 
-        async function handleSubmit(event) {
-            event.preventDefault();
-            var status = document.getElementById("my-form-status");
-            var data = new FormData(event.target);
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    status.innerHTML = "Thanks for your submission!";
-                    form.reset()
-                } else {
-                    response.json().then(data => {
+        keys.forEach(k => {
+            const tab = document.getElementById(`tab-${k}`);
+            const panel = document.getElementById(`panel-${k}`);
+
+            if (!tab || !panel) return;
+
+            if (k === key) {
+                tab.classList.add('is-active');
+                tab.setAttribute('aria-selected', 'true');
+                panel.classList.add('is-active');
+            } else {
+                tab.classList.remove('is-active');
+                tab.setAttribute('aria-selected', 'false');
+                panel.classList.remove('is-active');
+            }
+        });
+    }
+
+
+    /* ---------------------
+       CONTACT FORM (FORMSPREE)
+    --------------------- */
+    const form = document.getElementById("contact-form");
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const status = document.getElementById("my-form-status");
+        const data = new FormData(event.target);
+
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                if (status) status.innerHTML = "Thanks for your submission!";
+                form.reset();
+            } else {
+                response.json().then(data => {
+                    if (status) {
                         if (Object.hasOwn(data, 'errors')) {
-                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                         } else {
-                            status.innerHTML = "Oops! There was a problem submitting your form"
+                            status.innerHTML = "Oops! There was a problem submitting your form";
                         }
-                    })
-                }
-            }).catch(error => {
-                status.innerHTML = "Oops! There was a problem submitting your form"
-            });
-        }
-        form.addEventListener("submit", handleSubmit)
-    </script>
+                    }
+                });
+            }
+        }).catch(() => {
+            if (status) status.innerHTML = "Oops! There was a problem submitting your form";
+        });
+    }
 
+
+    /* ---------------------
+       INIT (SAFE)
+    --------------------- */
+    document.addEventListener("DOMContentLoaded", () => {
+        // slideshow init
+        if (document.getElementsByClassName("mySlides").length) {
+            showSlides(slideIndex);
+        }
+
+        // timeline default tab (optional safety)
+        if (document.getElementById("tab-academic") && document.getElementById("panel-academic")) {
+            switchTimelineTab('academic');
+        }
+
+        // form handler
+        if (form) {
+            form.addEventListener("submit", handleSubmit);
+        }
+    });
+</script>
 
 </body>
-
 </html>
