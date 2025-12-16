@@ -105,34 +105,66 @@
   });
 
 
-  /* ------------------
-     RESUME MODAL
-  ------------------ */
-  const modal = $("#resumeModal");
+/* ------------------
+   RESUME MODAL
+------------------ */
+const modal = $("#resumeModal");
+const resumeFrame = modal?.querySelector("#resumeFrame");
+const pageBtns = modal ? [...modal.querySelectorAll(".resume-page")] : [];
+let activePage = 1;
 
-  const openResume = (e) => {
-    e?.preventDefault();
-    if (!modal) return;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  };
+const setResumePage = (page = 1) => {
+  activePage = Number(page) || 1;
 
-  const closeResume = () => {
-    if (!modal) return;
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  };
+  // Force mobile-friendly scaling + explicit page selection
+  if (resumeFrame) {
+    resumeFrame.src = `resume.pdf#page=${activePage}&zoom=page-width`;
+  }
 
-  $$(".js-resume").forEach(a => a.addEventListener("click", openResume));
-  modal?.addEventListener("click", (e) => {
-    if (e.target.closest("[data-close]")) closeResume();
-  });
+  // Update active state on pager buttons (if present)
+  pageBtns.forEach((b) =>
+    b.classList.toggle("is-active", Number(b.dataset.page) === activePage)
+  );
+};
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeResume();
-  });
+const openResume = (e) => {
+  e?.preventDefault();
+  if (!modal) return;
+
+  // Always open to page 1 (more predictable on mobile)
+  setResumePage(1);
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+};
+
+const closeResume = () => {
+  if (!modal) return;
+
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+};
+
+$$(".js-resume").forEach((a) => a.addEventListener("click", openResume));
+
+modal?.addEventListener("click", (e) => {
+  // Page switching (mobile fallback)
+  const pageBtn = e.target.closest(".resume-page");
+  if (pageBtn?.dataset.page) {
+    setResumePage(pageBtn.dataset.page);
+    return;
+  }
+
+  // Close actions
+  if (e.target.closest("[data-close]")) closeResume();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeResume();
+});
+
 
   /* ------------------
      INIT

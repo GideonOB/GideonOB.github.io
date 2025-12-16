@@ -748,19 +748,37 @@
   </footer>
 
   <!-- RESUME MODAL -->
-  <div id="resumeModal" class="resume-modal" aria-hidden="true" role="dialog" aria-label="Resume preview">
-    <div class="resume-modal__backdrop" data-close></div>
-    <div class="resume-modal__panel" role="document">
-      <button class="resume-modal__close" aria-label="Close resume" data-close>&times;</button>
-      <div class="resume-modal__header">
-        <span class="resume-modal__title">Resume Preview</span>
+<div id="resumeModal" class="resume-modal" aria-hidden="true" role="dialog" aria-label="Resume preview">
+  <div class="resume-modal__backdrop" data-close></div>
+
+  <div class="resume-modal__panel" role="document">
+    <button class="resume-modal__close" aria-label="Close resume" data-close>&times;</button>
+
+    <div class="resume-modal__header">
+      <span class="resume-modal__title">Resume Preview</span>
+
+      <div class="resume-modal__header-actions">
+        <!-- Mobile fallback: explicit page switcher -->
+        <div class="resume-modal__pager" aria-label="Resume pages">
+          <button type="button" class="resume-page is-active" data-page="1">Page 1</button>
+          <button type="button" class="resume-page" data-page="2">Page 2</button>
+        </div>
+
         <a class="resume-modal__open" href="resume.pdf" target="_blank" rel="noopener">Open PDF</a>
       </div>
-      <div class="resume-modal__body">
-        <iframe title="Gideon Osei Bonsu Resume" src="resume.pdf#view=FitH" loading="lazy"></iframe>
-      </div>
+    </div>
+
+    <div class="resume-modal__body">
+      <iframe
+        id="resumeFrame"
+        title="Gideon Osei Bonsu Resume"
+        src="resume.pdf#page=1&zoom=page-width"
+        loading="lazy">
+      </iframe>
     </div>
   </div>
+</div>
+
 
   <script src="Persweb.js"></script>
 </body>
