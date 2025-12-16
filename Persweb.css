@@ -183,6 +183,50 @@ body{
 @media (max-width:520px){
   .values-container{grid-template-columns:1fr}
 }
+/* =========================
+   FAITH PILL MOBILE FIX
+========================= */
+@media (max-width: 600px){
+
+  /* Target your faith pill safely inside About */
+  .about__content .mt-3 span{
+    max-width: 100%;
+    padding: 14px 14px !important;
+    border-radius: 18px !important; /* less extreme than 999px on tiny screens */
+    margin: 0 auto;
+    overflow-wrap: anywhere; /* prevents text overflow */
+    word-break: normal;
+  }
+
+  /* Add a little breathing room above and below the pill */
+  .about__content .mt-3{
+    margin-bottom: 14px;
+  }
+
+  /* Specifically add space for the pill block */
+  .about__content .values-container + .mt-3{
+    margin-top: 18px !important;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 380px){
+  .about__content .mt-3 span{
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
+@media (max-width: 600px){
+  .faith-pill{
+    display: block;
+    max-width: 100%;
+    padding: 14px 14px !important;
+    border-radius: 18px !important;
+    margin: 0 auto;
+    overflow-wrap: anywhere;
+  }
+}
+
 
 /* PORTFOLIO */
 .portfolio{
@@ -266,6 +310,63 @@ body{
   .prev{left:0} .next{right:0}
   .dots{margin-top:18px}
 }
+/* =========================
+   MOBILE PORTFOLIO FIXES
+========================= */
+@media (max-width: 600px){
+
+  /* Give the portfolio background box a bit more breathing room */
+  .portfolio-container{
+    padding: 18px 12px 36px;
+  }
+
+  /* Prevent slideshow content + controls from pushing outside */
+  .slides-wrap{
+    padding-bottom: 38px; /* space for prev/next + dots */
+  }
+
+  /* Make the project card obey the container width */
+  .project-frame{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 14px;
+  }
+
+  /* If images were contributing to overflow */
+  .project-frame img{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Keep buttons inside the background box */
+  .prev, .next{
+    top: auto;
+    bottom: 8px;
+  }
+
+  /* Slightly tighter dots spacing */
+  .dots{
+    margin-top: 16px;
+  }
+
+  /* Quick View cards: smaller + centered */
+  .portfolio-grid{
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .portfolio-card{
+    width: 100%;
+    max-width: 340px; /* makes them feel "card-sized" */
+  }
+}
+
+/* Even smaller phones */
+@media (max-width: 380px){
+  .portfolio-card{ max-width: 310px; }
+}
+
 
 /* TIMELINE */
 .timeline-section{padding-bottom:40px}
@@ -352,29 +453,106 @@ body{
   margin:0 auto 18px; max-width:62ch; color:var(--muted);
   font-size:clamp(1rem,1.7vw,1.12rem); line-height:1.6;
 }
+
 #contact-form{text-align:left; margin-top:10px}
 #contact-form label{display:block; font-size:1rem; margin-bottom:6px; color:var(--muted)}
-#contact-form input,#contact-form textarea,#contact-form select{
-  width:100%; padding:11px 12px; margin-bottom:16px; border-radius:8px;
+
+#contact-form input,
+#contact-form textarea,
+#contact-form select{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  padding:11px 12px;
+  margin-bottom:16px;
+  border-radius:8px;
   border:1px solid rgba(255,255,255,.14);
-  background:rgba(255,255,255,.08); color:var(--text); outline:none;
+  background:rgba(255,255,255,.08);
+  color:var(--text);
+  outline:none;
 }
-#contact-form input::placeholder,#contact-form textarea::placeholder{color:#6f7b7a}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder{color:#6f7b7a}
+
 #contact-form select option{background:#0b3b33; color:#fff}
-#contact-form input:focus,#contact-form textarea:focus,#contact-form select:focus{
-  border-color:rgba(212,160,23,.6); box-shadow:0 0 0 3px rgba(212,160,23,.18);
+
+/* Keep your existing gold focus for inputs/textarea; select gets cyan focus below */
+#contact-form input:focus,
+#contact-form textarea:focus{
+  border-color:rgba(212,160,23,.6);
+  box-shadow:0 0 0 3px rgba(212,160,23,.18);
 }
+
+/* Select: mobile-safe styling + touch highlight */
+#contact-form select{
+  cursor:pointer;
+  -webkit-appearance:none;
+  appearance:none;
+
+  /* Optional chevron (does not change functionality) */
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,.65) 50%),
+    linear-gradient(135deg, rgba(255,255,255,.65) 50%, transparent 50%),
+    linear-gradient(to right, transparent, transparent);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 13px) calc(50% - 3px),
+    0 0;
+  background-size:6px 6px, 6px 6px, 100% 100%;
+  background-repeat:no-repeat;
+  padding-right:38px;
+
+  transition:border-color .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+/* Desktop hover (true hover devices only) */
+@media (hover: hover) and (pointer: fine){
+  #contact-form select:hover{
+    border-color:yellow;
+    box-shadow:0 0 0 3px cyan;
+    filter:brightness(1.03);
+  }
+}
+
+/* Touch devices: mimic hover using focus/active */
+@media (hover: none) and (pointer: coarse){
+  #contact-form select:focus,
+  #contact-form select:focus-visible,
+  #contact-form select:active{
+    border-color:yellow;
+    box-shadow:0 0 0 3px cyan;
+    filter:brightness(1.03);
+  }
+}
+
+/* Also give select a consistent focus ring on any device */
+#contact-form select:focus,
+#contact-form select:focus-visible{
+  border-color:rgba(0,255,255,.55);
+  box-shadow:0 0 0 3px rgba(0,255,255,.16);
+}
+
 #contact-form button{
   width:100%; padding:11px 18px; border-radius:10px;
   background:var(--accent); border:1px solid rgba(0,0,0,.08);
   color:#1b1200; font-size:1.02rem; font-weight:700; cursor:pointer; transition:.2s ease;
 }
 #contact-form button:hover{filter:brightness(1.05); transform:translateY(-1px)}
+
 #my-form-status{margin:10px 0 0; font-weight:600; color:var(--muted); min-height:1.2em}
 .contact-privacy{margin:10px 0 0; font-size:.9rem; color:rgba(255,255,255,.75)}
 .contact-alt{display:flex; justify-content:center; margin-top:14px}
 .hp-field{display:none!important}
-@media (max-width:520px){.contact-container{padding:22px 16px}}
+
+/* Mobile: prevent clipping and avoid iOS zoom on form controls */
+@media (max-width:520px){
+  .contact, .contact .container, .contact-container{ overflow:visible; }
+  .contact-container{ padding:22px 16px; }
+  #contact-form select{ font-size:16px; line-height:1.2; }
+}
+
+
 
 /* RESUME MODAL */
 .resume-modal{
@@ -429,6 +607,54 @@ body{
   .resume-modal__close{width:36px; height:36px; font-size:24px; top:8px; right:8px}
   .resume-modal__header{padding:14px 50px 12px 14px}
 }
+/* =========================
+   RESUME MODAL MOBILE FIX
+========================= */
+@media (max-width: 600px){
+
+  .resume-modal__panel{
+    width: 94vw;
+    /* Use small-viewport units where supported (better on mobile browser UI) */
+    height: 92svh;
+    max-height: 92vh;
+
+    margin: 2.5vh auto 0;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column; /* key change */
+  }
+
+  .resume-modal__header{
+    flex: 0 0 auto;
+  }
+
+  .resume-modal__body{
+    flex: 1 1 auto; /* fills remaining height */
+    height: auto;   /* override calc height */
+    min-height: 0;  /* prevents flex overflow */
+  }
+
+  .resume-modal__body iframe{
+    height: 100%;
+  }
+
+  .resume-modal__close{
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+}
+
+/* Very short screens (landscape phones) */
+@media (max-height: 500px){
+  .resume-modal__panel{
+    height: 94svh;
+    max-height: 94vh;
+    margin-top: 1.5vh;
+  }
+}
+
 
 /* FOOTER */
 .footer{
