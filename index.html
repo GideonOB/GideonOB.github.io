@@ -768,12 +768,22 @@
     </div>
 
     <div class="resume-modal__body">
-      <iframe
-        id="resumeFrame"
-        title="Gideon Osei Bonsu Resume"
-        src="resume.pdf#page=1&zoom=page-width"
-        loading="lazy">
-      </iframe>
+      <div class="resume-modal__pages">
+        <iframe
+          class="resume-modal__page is-active"
+          data-page="1"
+          title="Gideon Osei Bonsu Resume - Page 1"
+          src="resume.pdf#page=1&zoom=page-width"
+          loading="lazy">
+        </iframe>
+        <iframe
+          class="resume-modal__page"
+          data-page="2"
+          title="Gideon Osei Bonsu Resume - Page 2"
+          src="resume.pdf#page=2&zoom=page-width"
+          loading="lazy">
+        </iframe>
+      </div>
     </div>
   </div>
 </div>
