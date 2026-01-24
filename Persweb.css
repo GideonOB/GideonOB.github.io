@@ -656,7 +656,17 @@ body{
 .resume-modal__open:hover{
   color:#fff; border-color:rgba(212,160,23,.45); background:rgba(212,160,23,.10);
 }
-.resume-modal__body{height:calc(100% - 54px); background:#fff}
+.resume-modal__body{
+  flex:1 1 auto;
+  min-height:0;
+  background:#fff;
+}
+.resume-modal__body iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
 .resume-modal__pages{height:100%}
 .resume-modal__page{
   width:100%;
@@ -730,11 +740,6 @@ body{
   overscroll-behavior:contain;
 }
 
-@media (max-width:600px){
-  .resume-modal__body{
-    overflow:hidden;
-  }
-}
 
 
 /* FOOTER */
