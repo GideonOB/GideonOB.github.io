@@ -109,17 +109,16 @@
    RESUME MODAL
 ------------------ */
 const modal = $("#resumeModal");
-const resumeFrame = modal?.querySelector("#resumeFrame");
+const resumePages = modal ? [...modal.querySelectorAll(".resume-modal__page")] : [];
 const pageBtns = modal ? [...modal.querySelectorAll(".resume-page")] : [];
 let activePage = 1;
 
 const setResumePage = (page = 1) => {
   activePage = Number(page) || 1;
 
-  // Force mobile-friendly scaling + explicit page selection
-  if (resumeFrame) {
-    resumeFrame.src = `resume.pdf#page=${activePage}&zoom=page-width`;
-  }
+  resumePages.forEach((frame) => {
+    frame.classList.toggle("is-active", Number(frame.dataset.page) === activePage);
+  });
 
   // Update active state on pager buttons (if present)
   pageBtns.forEach((b) =>
