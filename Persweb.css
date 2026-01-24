@@ -656,19 +656,16 @@ body{
 .resume-modal__open:hover{
   color:#fff; border-color:rgba(212,160,23,.45); background:rgba(212,160,23,.10);
 }
-.resume-modal__body{
-  flex:1 1 auto;
-  min-height:0;
-  width:100%;
-  background:#fff;
-}
-.resume-modal__body iframe{
-  display:block;
+.resume-modal__body{height:calc(100% - 54px); background:#fff}
+.resume-modal__pages{height:100%}
+.resume-modal__page{
   width:100%;
   height:100%;
   border:0;
   background:#fff;
+  display:none;
 }
+.resume-modal__page.is-active{display:block}
 @media (max-width:600px){
   .resume-modal__panel{width:95vw; height:92vh; margin:2vh auto 0; border-radius:14px}
   .resume-modal__close{width:36px; height:36px; font-size:24px; top:8px; right:8px}
@@ -695,6 +692,12 @@ body{
 
   .resume-modal__body{
     flex: 1 1 auto; /* fills remaining height */
+    height: auto;   /* override calc height */
+    min-height: 0;  /* prevents flex overflow */
+  }
+
+  .resume-modal__page{
+    height: 100%;
   }
 
   .resume-modal__close{
