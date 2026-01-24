@@ -104,11 +104,51 @@ body{
   border:1px solid var(--line); border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
-.hero h1{font-size:clamp(1.65rem,4.2vw,2.4rem); margin:4px 0}
+.hero h1{
+  font-size:clamp(1.65rem,4.2vw,2.4rem);
+  margin:4px 0;
+  color:var(--accent-2);
+}
 .hero h2{font-size:clamp(1rem,2.2vw,1.18rem); color:var(--muted); margin:0 0 12px}
+.hero-intro{
+  margin:0 auto 10px;
+  max-width:60ch;
+  font-size:clamp(1.02rem,1.9vw,1.18rem);
+  line-height:1.6;
+  text-shadow:0 10px 24px rgba(0,0,0,.25);
+  animation:hero-glide 12s linear infinite;
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(212,160,23,.10));
+  border:1px solid rgba(255,255,255,.12);
+  will-change:transform;
+}
+.hero-sub{
+  margin:0 auto 14px;
+  max-width:60ch;
+  color:rgba(255,255,255,.84);
+  line-height:1.65;
+  text-shadow:0 10px 24px rgba(0,0,0,.25);
+  animation:hero-glide 14s linear infinite;
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.12);
+  will-change:transform;
+}
 #firstp{
   max-width:60ch; font-size:clamp(.98rem,1.7vw,1.1rem);
   line-height:1.6; margin:0 auto 12px; padding:0 4px;
+  text-shadow:0 10px 24px rgba(0,0,0,.25);
+  animation:hero-glide 16s linear infinite;
+  display:inline-block;
+  padding:12px 16px;
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(212,160,23,.10),rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.12);
+  will-change:transform;
 }
 .hero__actions{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:6px 0 2px}
 .btn{
@@ -134,6 +174,20 @@ body{
   transition:.35s ease;
 }
 #design:hover div{background:var(--accent); border-color:var(--accent); transform:translateY(-1px)}
+
+@keyframes hero-glide{
+  0%{transform:translateX(-18px)}
+  50%{transform:translateX(18px)}
+  100%{transform:translateX(-18px)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-intro,
+  .hero-sub,
+  #firstp{
+    animation:none;
+  }
+}
 
 @media (max-width:600px){
   .hero{padding-top:68px; padding-bottom:32px}
@@ -573,6 +627,8 @@ body{
   border:1px solid rgba(212,160,23,.40); border-radius:18px;
   box-shadow:0 18px 55px rgba(0,0,0,.50),0 0 0 1px rgba(212,160,23,.12) inset;
   overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 .resume-modal__close{
   position:absolute; top:10px; right:12px; z-index:4;
@@ -600,8 +656,19 @@ body{
 .resume-modal__open:hover{
   color:#fff; border-color:rgba(212,160,23,.45); background:rgba(212,160,23,.10);
 }
-.resume-modal__body{height:calc(100% - 54px); background:#fff}
-.resume-modal__body iframe{width:100%; height:100%; border:0; background:#fff}
+.resume-modal__body{
+  flex:1 1 auto;
+  min-height:0;
+  width:100%;
+  background:#fff;
+}
+.resume-modal__body iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#fff;
+}
 @media (max-width:600px){
   .resume-modal__panel{width:95vw; height:92vh; margin:2vh auto 0; border-radius:14px}
   .resume-modal__close{width:36px; height:36px; font-size:24px; top:8px; right:8px}
@@ -620,9 +687,6 @@ body{
 
     margin: 2.5vh auto 0;
     border-radius: 14px;
-
-    display: flex;
-    flex-direction: column; /* key change */
   }
 
   .resume-modal__header{
@@ -631,12 +695,6 @@ body{
 
   .resume-modal__body{
     flex: 1 1 auto; /* fills remaining height */
-    height: auto;   /* override calc height */
-    min-height: 0;  /* prevents flex overflow */
-  }
-
-  .resume-modal__body iframe{
-    height: 100%;
   }
 
   .resume-modal__close{
@@ -662,29 +720,6 @@ body{
   gap:10px;
 }
 
-/* Pager hidden on desktop; shown on small screens */
-.resume-modal__pager{
-  display:none;
-  gap:8px;
-}
-
-.resume-page{
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  padding:6px 10px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:.85rem;
-  cursor:pointer;
-}
-
-.resume-page.is-active{
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  color:#1b1200;
-  border-color:rgba(0,0,0,.08);
-}
-
 /* Make scrolling inside the modal body feel correct on mobile */
 .resume-modal__body{
   overflow:auto;
@@ -693,7 +728,9 @@ body{
 }
 
 @media (max-width:600px){
-  .resume-modal__pager{ display:flex; }
+  .resume-modal__body{
+    overflow:hidden;
+  }
 }
 
 
