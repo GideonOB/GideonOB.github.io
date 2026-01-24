@@ -116,7 +116,7 @@ const openResume = (e) => {
   if (!modal) return;
 
   if (resumeFrame) {
-    resumeFrame.src = "resume.pdf#page=1&zoom=page-fit";
+    resumeFrame.src = "theresume.pdf#page=1&zoom=page-fit";
   }
 
   modal.classList.add("is-open");
