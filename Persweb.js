@@ -110,29 +110,14 @@
 ------------------ */
 const modal = $("#resumeModal");
 const resumeFrame = modal?.querySelector("#resumeFrame");
-const pageBtns = modal ? [...modal.querySelectorAll(".resume-page")] : [];
-let activePage = 1;
-
-const setResumePage = (page = 1) => {
-  activePage = Number(page) || 1;
-
-  // Force mobile-friendly scaling + explicit page selection
-  if (resumeFrame) {
-    resumeFrame.src = `resume.pdf#page=${activePage}&zoom=page-width`;
-  }
-
-  // Update active state on pager buttons (if present)
-  pageBtns.forEach((b) =>
-    b.classList.toggle("is-active", Number(b.dataset.page) === activePage)
-  );
-};
 
 const openResume = (e) => {
   e?.preventDefault();
   if (!modal) return;
 
-  // Always open to page 1 (more predictable on mobile)
-  setResumePage(1);
+  if (resumeFrame) {
+    resumeFrame.src = "theresume.pdf#page=1&zoom=page-fit";
+  }
 
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
@@ -150,14 +135,6 @@ const closeResume = () => {
 $$(".js-resume").forEach((a) => a.addEventListener("click", openResume));
 
 modal?.addEventListener("click", (e) => {
-  // Page switching (mobile fallback)
-  const pageBtn = e.target.closest(".resume-page");
-  if (pageBtn?.dataset.page) {
-    setResumePage(pageBtn.dataset.page);
-    return;
-  }
-
-  // Close actions
   if (e.target.closest("[data-close]")) closeResume();
 });
 
