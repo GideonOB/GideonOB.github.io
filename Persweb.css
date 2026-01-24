@@ -104,8 +104,24 @@ body{
   border:1px solid var(--line); border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
-.hero h1{font-size:clamp(1.65rem,4.2vw,2.4rem); margin:4px 0}
+.hero h1{
+  font-size:clamp(1.65rem,4.2vw,2.4rem);
+  margin:4px 0;
+  color:var(--accent-2);
+}
 .hero h2{font-size:clamp(1rem,2.2vw,1.18rem); color:var(--muted); margin:0 0 12px}
+.hero-intro{
+  margin:0 auto 10px;
+  max-width:60ch;
+  font-size:clamp(1.02rem,1.9vw,1.18rem);
+  line-height:1.6;
+}
+.hero-sub{
+  margin:0 auto 14px;
+  max-width:60ch;
+  color:rgba(255,255,255,.84);
+  line-height:1.65;
+}
 #firstp{
   max-width:60ch; font-size:clamp(.98rem,1.7vw,1.1rem);
   line-height:1.6; margin:0 auto 12px; padding:0 4px;
@@ -662,29 +678,6 @@ body{
   gap:10px;
 }
 
-/* Pager hidden on desktop; shown on small screens */
-.resume-modal__pager{
-  display:none;
-  gap:8px;
-}
-
-.resume-page{
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  padding:6px 10px;
-  border-radius:999px;
-  font-weight:700;
-  font-size:.85rem;
-  cursor:pointer;
-}
-
-.resume-page.is-active{
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  color:#1b1200;
-  border-color:rgba(0,0,0,.08);
-}
-
 /* Make scrolling inside the modal body feel correct on mobile */
 .resume-modal__body{
   overflow:auto;
@@ -693,7 +686,9 @@ body{
 }
 
 @media (max-width:600px){
-  .resume-modal__pager{ display:flex; }
+  .resume-modal__body{
+    overflow:hidden;
+  }
 }
 
 
