@@ -740,11 +740,6 @@ body{
   overscroll-behavior:contain;
 }
 
-@media (max-width:600px){
-  .resume-modal__body{
-    overflow:hidden;
-  }
-}
 
 
 /* FOOTER */
