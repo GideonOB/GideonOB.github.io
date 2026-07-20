@@ -56,6 +56,7 @@
     academic: $("#panel-academic"),
     professional: $("#panel-professional"),
     entrepreneurial: $("#panel-entrepreneurial"),
+    leadership: $("#panel-leadership"),
     awards: $("#panel-awards"),
   };
 
