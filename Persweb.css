@@ -311,12 +311,15 @@ body{
 .project-frame{
   background:linear-gradient(135deg,rgba(200,155,60,.08),var(--panel),rgba(255,255,255,.98));
   border:1px solid rgba(212,160,23,.22);
-  border-radius:12px; padding:16px; text-align:center;
-  width:min(520px,92vw); margin:0 auto; transition:.2s ease;
+  border-radius:12px; padding:12px; text-align:center;
+  width:min(460px,88vw); margin:0 auto; transition:.2s ease;
 }
-.project-frame img{width:100%; border-radius:10px; border:1px solid rgba(17,24,39,.08)}
-.project-frame h3{margin:12px 0 6px; font-size:1.1rem; color:var(--accent-2)}
-.project-frame p{margin:0; font-size:.98rem; color:var(--muted)}
+.project-frame img{
+  display:block; width:min(100%,420px); max-height:220px; margin:0 auto;
+  object-fit:contain; border-radius:10px; border:1px solid rgba(17,24,39,.08);
+}
+.project-frame h3{margin:10px 0 5px; font-size:1.02rem; color:var(--accent-2)}
+.project-frame p{margin:0; font-size:.92rem; color:var(--muted)}
 
 .prev,.next{
   position:absolute; top:50%; transform:translateY(-50%);
@@ -395,16 +398,25 @@ body{
 
   /* Make the project card obey the container width */
   .project-frame{
-    width: 100%;
+    width: min(100%, 360px);
     max-width: 100%;
     margin: 0 auto;
-    padding: 14px;
+    padding: 10px;
   }
 
-  /* If images were contributing to overflow */
+  /* Keep slideshow images compact enough to fit within a single viewport. */
   .project-frame img{
-    max-width: 100%;
+    width: min(100%, 320px);
+    max-height: 170px;
     height: auto;
+  }
+
+  .project-frame h3{
+    font-size: .98rem;
+  }
+
+  .project-frame p{
+    font-size: .88rem;
   }
 
   /* Keep buttons inside the background box */
