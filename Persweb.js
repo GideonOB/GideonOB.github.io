@@ -26,7 +26,7 @@
 
   const header = $(".site-header");
   const aboutHighlights = $(".about-highlights");
-  const mobileAbout = window.matchMedia("(max-width: 680px)");
+  const mobileAbout = window.matchMedia("(max-width: 950px)");
 
   const syncAboutHighlights = ({ matches }) => {
     if (!aboutHighlights) return;
