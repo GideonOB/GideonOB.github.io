@@ -24,6 +24,22 @@
     if (window.matchMedia("(max-width: 900px)").matches) setNavState(false);
   });
 
+  const header = $(".site-header");
+  const backToTop = document.createElement("button");
+  backToTop.className = "back-to-top";
+  backToTop.type = "button";
+  backToTop.setAttribute("aria-label", "Back to top");
+  backToTop.innerHTML = "↑";
+  document.body.append(backToTop);
+
+  const updateScrollUI = () => {
+    header?.classList.toggle("is-scrolled", window.scrollY > 24);
+    backToTop.classList.toggle("is-visible", window.scrollY > 700);
+  };
+  window.addEventListener("scroll", updateScrollUI, { passive: true });
+  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  updateScrollUI();
+
   /* ------------------
      PORTFOLIO SLIDESHOW
   ------------------ */
@@ -72,6 +88,16 @@
   $(".timeline-tabs")?.addEventListener("click", (e) => {
     const btn = e.target.closest(".timeline-tab");
     if (btn?.dataset.key) activateTab(btn.dataset.key);
+  });
+
+  $(".timeline-tabs")?.addEventListener("keydown", (e) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(e.key)) return;
+    e.preventDefault();
+    const current = tabButtons.indexOf(document.activeElement);
+    const direction = e.key === "ArrowRight" ? 1 : -1;
+    const target = tabButtons[(current + direction + tabButtons.length) % tabButtons.length];
+    target?.focus();
+    if (target?.dataset.key) activateTab(target.dataset.key);
   });
 
   /* ------------------
@@ -150,5 +176,25 @@ document.addEventListener("keydown", (e) => {
   document.addEventListener("DOMContentLoaded", () => {
     show(idx);
     activateTab("academic");
+    $("#current-year") && ($("#current-year").textContent = new Date().getFullYear());
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    $$(".reveal").forEach(element => revealObserver.observe(element));
+
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        $$(".navbar__links a[href^='#']").forEach(link => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    }, { rootMargin: "-35% 0px -55%" });
+    $$("main section[id]").forEach(section => sectionObserver.observe(section));
   });
 })();
