@@ -91,35 +91,61 @@
     <!-- ABOUT -->
     <section id="about" class="section about">
       <div class="container">
-        <header class="section-intro reveal"><p class="eyebrow">Beyond the résumé</p><h2>Curiosity with conviction.</h2><p>I bring analytical rigor, a learner’s mindset, and a deep commitment to creating work that improves how people live, learn, and work.</p></header>
+        <header class="section-intro reveal">
+          <p class="eyebrow">Beyond the résumé</p>
+          <h2>Curiosity with conviction.</h2>
+          <p>I bring analytical rigor, a learner’s mindset, and a deep commitment to creating work that improves how people live, learn, and work.</p>
+        </header>
+
         <div class="about__grid">
           <div class="about__portrait reveal">
-            <div class="portrait-frame"><img src="images/Gideon.jpg" alt="Portrait of Gideon Osei Bonsu" width="640" height="640" loading="lazy" /></div>
+            <div class="portrait-frame">
+              <img src="images/Gideon.jpg" alt="Portrait of Gideon Osei Bonsu" width="640" height="640" loading="lazy" />
+            </div>
             <div class="portrait-note"><span>Based at</span><strong>Grand Valley State University</strong></div>
           </div>
-          <div class="about__content reveal">
-            <p class="about-lead">I’m currently based in the Office of the Provost at GVSU, where I serve as a Strategic Planning, Assessment, and Accreditation Graduate Assistant while pursuing an M.S. in Data Science &amp; Analytics.</p>
-            <div class="at-a-glance">
-              <div><small>Study</small><strong>M.S. Data Science<br>&amp; Analytics</strong></div>
-              <div><small>Role</small><strong>Strategic Planning<br>&amp; Accreditation</strong></div>
-              <div><small>Focus</small><strong>Evidence into<br>Action</strong></div>
-            </div>
-            <div class="ongoing-work">
-              <div class="ongoing-work__heading"><p class="values-label">Ongoing work</p><span>Building · Researching · Exploring</span></div>
-              <div class="ongoing-work__grid">
-                <article><span class="work-index">01</span><small>Product development</small><h3>Sender+</h3><p>A Ghana-focused, tech-enabled delivery company creating a more reliable and structured package-delivery experience.</p><b>Building</b></article>
-                <article><span class="work-index">02</span><small>AI-assisted infrastructure</small><h3>Evidence Vault</h3><p>An AI-assisted evidence workspace for managing, analyzing, and preparing higher-education accreditation documentation—designed to streamline accreditation and strategic-planning workflows.</p><b>In development</b></article>
-                <article><span class="work-index">03</span><small>Independent research</small><h3>Gun Violence Research</h3><p>Extending my existing interactive gun-violence project into formal research on patterns, contributing factors, and evidence-informed intervention.</p><b>Research in progress</b></article>
+
+          <details class="about-highlights reveal" open>
+            <summary>
+              <span>About Highlights</span>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="about-highlights__content">
+              <p class="about-lead">I’m currently based in the Office of the Provost at GVSU, where I serve as a Strategic Planning, Assessment, and Accreditation Graduate Assistant while pursuing an M.S. in Data Science &amp; Analytics.</p>
+              <div class="at-a-glance">
+                <div><small>Study</small><strong>M.S. Data Science<br>&amp; Analytics</strong></div>
+                <div><small>Expertise</small><strong>Python · R · SQL</strong></div>
+                <div><small>Focus</small><strong>Evidence into<br>Action</strong></div>
               </div>
             </div>
-            <p class="values-label">The principles behind the work</p>
-            <ol class="values-container">
-              <li class="value-box"><span>01</span><div><h3>Humility</h3><p>Meeting every challenge with an open mind and every person with respect.</p></div></li>
-              <li class="value-box"><span>02</span><div><h3>Intellectual Curiosity</h3><p>Finding joy in lifelong learning and seeking a deeper understanding of the world.</p></div></li>
-              <li class="value-box"><span>03</span><div><h3>Diligence</h3><p>Giving each endeavor the sustained care and effort that excellence requires.</p></div></li>
-            </ol>
-          </div>
+          </details>
         </div>
+
+        <div class="about__lower reveal">
+          <section class="principles" aria-labelledby="principles-title">
+            <div class="principles__heading">
+              <p class="eyebrow">Grounded in character</p>
+              <h3 id="principles-title">Principles</h3>
+            </div>
+            <ol class="values-container">
+              <li class="value-box"><span>01</span><div><h4>Humility</h4><p>Meeting every challenge with an open mind and every person with respect.</p></div></li>
+              <li class="value-box"><span>02</span><div><h4>Intellectual Curiosity</h4><p>Finding joy in lifelong learning and seeking a deeper understanding of the world.</p></div></li>
+              <li class="value-box"><span>03</span><div><h4>Diligence</h4><p>Giving each endeavor the sustained care and effort that excellence requires.</p></div></li>
+            </ol>
+          </section>
+
+          <section class="ongoing-work" aria-labelledby="ongoing-title">
+            <div class="ongoing-work__heading">
+              <div><p class="eyebrow">Building · Researching · Exploring</p><h3 id="ongoing-title">Ongoing Work</h3></div>
+            </div>
+            <div class="ongoing-work__grid">
+              <article><span class="work-index">01</span><small>Product development</small><h4>Sender+</h4><p>A Ghana-focused, tech-enabled delivery company creating a more reliable and structured package-delivery experience.</p><b>Building</b></article>
+              <article><span class="work-index">02</span><small>AI-assisted infrastructure</small><h4>Evidence Vault</h4><p>An AI-assisted evidence workspace for managing, analyzing, and preparing higher-education accreditation documentation—designed to streamline accreditation and strategic-planning workflows.</p><b>In development</b></article>
+              <article><span class="work-index">03</span><small>Independent research</small><h4>Gun Violence Research</h4><p>Extending my existing interactive gun-violence project into formal research on patterns, contributing factors, and evidence-informed intervention.</p><b>Research in progress</b></article>
+            </div>
+          </section>
+        </div>
+
         <blockquote class="faith-note reveal"><span aria-hidden="true">“</span><p>My Christian faith is central to who I am – calling me to worship God and serve the Lord Jesus in spirit and truth, and to bring love, care, healing, and light to the communities I'm a part of.</p></blockquote>
       </div>
     </section>
@@ -714,7 +740,7 @@
     </div>
 
     <p class="footer-copyright">
-      &copy; <span id="current-year">2026</span> Gideon Osei Bonsu. Designed with curiosity and care.
+      &copy; <span id="current-year">2026</span> Gideon Osei Bonsu.
     </p>
   </footer>
 
