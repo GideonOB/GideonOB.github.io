@@ -1430,10 +1430,12 @@ body:before {
   .navbar__toggle-btn {
     display: block;
   }
+}
 
   .brand-copy small {
     display: none;
   }
+}
 
   .navbar__links {
     display: none;
