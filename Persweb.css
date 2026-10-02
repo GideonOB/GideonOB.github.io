@@ -2074,13 +2074,11 @@ body:before {
   .ongoing-work {
     padding: 18px;
   }
-}
 
   .ongoing-work__heading {
     align-items: flex-start;
     flex-direction: column;
   }
-}
 
   .ongoing-work article {
     padding: 16px 15px 16px 43px;
@@ -2110,25 +2108,29 @@ body:before {
   }
 
   .timeline-year {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: 78px minmax(0,1fr);
+    gap: 12px;
     margin-bottom: 66px;
   }
 
   .timeline-year__header {
     position: static;
-    width: 110px;
-    padding: 13px 10px;
+    width: auto;
+    padding: 13px 6px;
+  }
+
+  .timeline-year__header h4 {
+    font-size: 1.35rem;
   }
 
   .timeline-year:not(:last-child):before {
-    left: 54px;
+    left: 38px;
     bottom: -47px;
     height: 31px;
   }
 
   .timeline-year:not(:last-child):after {
-    left: 50px;
+    left: 34px;
     bottom: -53px;
   }
 
@@ -2374,7 +2376,7 @@ body:before {
   }
 
   .timeline-year:not(:last-child):after {
-    left: 50px;
+    left: 34px;
     bottom: -53px;
   }
 
